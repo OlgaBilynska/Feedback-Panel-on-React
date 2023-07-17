@@ -18,21 +18,11 @@ const FeedbackOptions = ({
 
     </ul>)
 };
-   
-      
-      
-      {/* <button className={css.button} key='neutral' type="button" onClick={onLeaveFeedback[1]}>
-        Neutral
-      </button>
-      
-      <button className={css.button} key='bad' type="button" onClick={onLeaveFeedback[2]}>
-        Bad
-      </button> */}
     
 
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onLeaveFeedback: PropTypes.arrayOf(PropTypes.func).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 }
