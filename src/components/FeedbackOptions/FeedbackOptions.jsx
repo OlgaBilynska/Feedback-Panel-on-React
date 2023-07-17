@@ -6,26 +6,33 @@ const FeedbackOptions = ({
   onLeaveFeedback
 }) => {
   return (
-    <div>
-      <button className={css.button} key='good' type="button" onClick={onLeaveFeedback[0]}>
-        Good
-      </button>
+    <ul>
+      {options.map(option => (
+        <li key={option}>
+          <button className={css.button} type="button" onClick={() => onLeaveFeedback(option)}>
+            {option === 'good' && "Good"}
+            {option === 'neutral' && "Neutral"}
+            {option === 'bad' && "Bad"}
+          </button>
+        </li>))}
+
+    </ul>)
+};
+   
       
-      <button className={css.button} key='neutral' type="button" onClick={onLeaveFeedback[1]}>
+      
+      {/* <button className={css.button} key='neutral' type="button" onClick={onLeaveFeedback[1]}>
         Neutral
       </button>
       
       <button className={css.button} key='bad' type="button" onClick={onLeaveFeedback[2]}>
         Bad
-      </button>
-      
-    </div>
-  );
-};
+      </button> */}
+    
 
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.number).isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   onLeaveFeedback: PropTypes.arrayOf(PropTypes.func).isRequired,
 }

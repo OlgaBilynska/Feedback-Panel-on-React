@@ -12,24 +12,8 @@ export class App extends React.Component {
     bad: 0,
   };
 
-  handleGood = () => {
-   this.setState(prevState => ({
-     good: prevState.good + 1,
-    }));
-  };
-
-  handleNeutral = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-
-  handleBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
-    console.log('click on bad');
-    this.countTotalFeedback();
+  handleClick = feedback => {
+    this.setState(prevState => ({ [feedback]: prevState[feedback] + 1 }));
   };
 
   countTotalFeedback = () => {
@@ -53,8 +37,8 @@ export class App extends React.Component {
 
         <Section title="Please provide your feedback">
           <FeedbackOptions 
-            options = {[this.state.good, this.state.neutral, this.state.bad]}
-            onLeaveFeedback={[this.handleGood, this.handleNeutral, this.handleBad]} />
+            options = {['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.handleClick} />
         </Section>
 
         <Section title="This is the statistics:">
