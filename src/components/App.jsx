@@ -1,5 +1,5 @@
 import React from 'react';
-// import css from './App.module.css';
+import css from './App.module.css';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
@@ -34,7 +34,7 @@ export class App extends React.Component {
     const total = this.countTotalFeedback();
 
     return (
-      <div className="css.container">
+      <div className={css.container}>
         <Section title="Please provide your feedback">
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
