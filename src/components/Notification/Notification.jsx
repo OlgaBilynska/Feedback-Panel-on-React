@@ -5,7 +5,7 @@ import css from './Notification.module.css';
 
 const Notification = ({ message }) => {
     return (
-        <div className='css.notifix'>
+        <div className={css.notifix}>
         {message}    
         </div>
     );
