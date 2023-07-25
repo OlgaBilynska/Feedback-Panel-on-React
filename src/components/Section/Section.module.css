@@ -1,5 +1,13 @@
 .section {
-  outline: 1px solid black;
-  padding: 0px 70px;
-  background-color: #eca1a6;
+  padding: 20px 50px;
+  background-color: var(--section);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 25px;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 20px;
 }

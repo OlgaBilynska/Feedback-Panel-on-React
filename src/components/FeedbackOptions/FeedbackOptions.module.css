@@ -1,0 +1,19 @@
+.buttonList {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  background-color: var(--accent);
+  color: var(--text);
+  font-weight: 500;
+  border-radius: 15px;
+  padding: 5px 10px;
+  border: var(--accent);
+
+  &:hover,
+  &:focus {
+    background-color: var(--text);
+    color: var(--accent);
+  }
+}
